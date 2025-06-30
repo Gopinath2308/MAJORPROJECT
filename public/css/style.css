@@ -1,0 +1,281 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/744/352/62/scary-grim-reaper-4k-skull-wallpaper-preview.jpg");
+    background-size: cover;
+}
+
+.flash-success-color{
+    background-color: rgba(161, 247, 161, 0.09) !important;
+    backdrop-filter: blur(10px) !important;
+    color: rgb(79, 168, 140) !important;
+    border: solid 0.2px rgba(85, 245, 191, .4) !important;
+}
+
+.flash-error-color{
+    background-color: rgba(247, 161, 161, 0.09) !important;
+    backdrop-filter: blur(10px) !important;
+    color: rgb(171, 77, 77) !important;
+    border: solid 0.2px rgba(245, 85, 85, 0.4) !important;
+}
+
+
+.container {
+    flex: 1;
+}
+
+/* .bi-box-arrow-right{
+    background-color: #870101;
+} */
+/* 
+.dropdown-btn{
+    background-color: transparent !important;
+    height: 50px;
+    width: 70px;
+    color: transparent !important;
+    border: none !important;
+}
+.dropdown-icon{
+    font-size: 27px;
+    color: #5e5c5c;
+}
+.dropdown-menu{
+    background-color: rgba(87, 44, 44, 0.1) !important;
+    backdrop-filter: blur(80px) !important;
+    border: solid 0.2px rgba(255, 83, 83, 0.4) !important;
+}
+.dropdown-item{
+    color: rgb(248, 36, 36) !important;
+    font-size: 17px;
+} */
+
+.H-show{
+    color: #fbfafa;
+}
+.Rating-color{
+    color: #cfcece;
+}
+
+.toggle-btn{
+    font-size: 26px;
+    color: #a80202 !important;
+}
+.navbar{
+    height: 5.3rem;
+    background-color: rgba(3, 0, 0, 0.7);
+    backdrop-filter: blur(10px) !important;
+    border-bottom: solid 1px rgb(61, 60, 60) ;
+}
+
+/* .nav-link:active{
+    color: #d91010 !important;
+} */
+.nav-link{
+    font-weight: 500;
+    font-size: 1.05rem !important;
+    color: #7a7878 !important;
+}
+.fa-khanda {
+    color:  #500101;
+    font-size: 2.1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    /* margin-bottom: .6rem; */
+}
+
+.pName{
+    font-size: 23px;
+    font-family: "Exile", system-ui;
+    font-weight: 200;
+    color: #870101;
+    text-shadow: 2px 2px 30px rgb(119, 1, 1);
+    -webkit-text-stroke: 1px black;
+}
+
+.nav-link:hover{
+    color: rgb(218, 216, 216) !important;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: rgb(218, 216, 216) !important;
+    font-weight: 500;
+}
+
+
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #8e8d8d;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links {
+    width: 100%;
+}
+
+.f-info-socials{
+    width: 100%;
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: #8e8d8d;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: rgba(216, 215, 215, 0.12);
+    backdrop-filter: blur(10px) !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: .5rem;
+    color: #8e8d8d;
+}
+
+/* cards */
+.heading h3{
+    color: #fbfafa;
+    font-family: "EB Garamond", serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(2px) !important;
+    background-color: transparent !important;
+}
+
+.card-img-top{
+    border-radius: 0.7rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 5px !important;
+    color: rgb(224, 223, 223) !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.price-color{
+    color: #8e8d8d;
+    font-size: .85rem;
+}
+.price-color b{
+    color: white;
+    font-size: 1rem;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card img{
+    width: 100%;
+    transition: .6s ease;
+}
+
+.card:hover img{
+    transform: scale(1.02);
+}
+
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+} 
+
+/* Show Page  */
+.show-img {
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.shoe-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.form-control{
+    backdrop-filter: blur(50px) !important;
+    background-color: transparent !important;
+    color: #949393 !important;
+    border: solid 1px #5c5c5c !important;
+}
+
+.form-color {
+    color: rgb(125, 121, 121) !important;
+}
+
+.Create{
+    color: rgb(149, 7, 7) !important;
+}
+
+.Section_top{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position:relative;
+    background-image: url(images/image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 12s infinite ease-in-out;
+}
+
+@keyframes change{
+    0%
+    {
+        background-image: url(images/img1.jpg);
+    }
+    20%
+    {
+        background-image: url(images/img2.jpg);
+    }
+    40%
+    {
+        background-image: url(images/img3.jpg);
+    }
+    60%
+    {
+        background-image: url(images/img4.jpg);
+    }
+    80%
+    {
+        background-image: url(images/img5.jpg);
+    }
+    100%
+    {
+        background-image: url(images/img6.jpg);
+    }
+}
+
+/* .homeStyle{
+    position: absolute;
+    top: 300px;
+    left: 100px;
+} */
+
+

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-body-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home"><i class="fa-solid fa-khanda"></i><span class="pName">Dark -> Destinations</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+      >
+        <span><i class="fa-solid fa-bars toggle-btn"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto me-auto">
+          <a class="nav-link" id="home" aria-current="page" href="/home">Home</a>
+          <a class="nav-link" href="/home/listings">All Places</a>
+          <a class="nav-link" href="/home/listings/new">Add new Place</a>
+        </div>
+        
+        <div class="me-3">
+            <% if(!currUser) { %>
+              <a class="btn btn-outline-secondary me-3" href="/signup">Sign up</a>
+              <a class="btn btn-outline-danger" href="/login">Log in</a>
+            <% } %> <% if(currUser) { %>
+              <a class="btn btn-outline-danger" href="/logout">Log out <i class="fa-solid fa-arrow-right-from-bracket ms-1"></i></a>
+            <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  

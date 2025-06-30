@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="pt-3 pb-3 heading"><h3>Haunted Places in the World</h3></div>
+    <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+    </form> -->
+
+    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+        <% for(let listing of allListings) { %>
+            <a href="/home/listings/<%= listing._id %>" class="listing-link">
+                <div class="card">
+                    <img src="<%= listing.image.url %>" class="card-img-top mb-2" style="height: 15rem;" alt="...">
+                    <div class="card-body">
+                      <p class="card-text price-color">
+                       <b><%= listing.title %></b><br>
+                        &#8377; <%= listing.price.toLocaleString("en-IN") %> for 1 night
+                    </p>
+                    </div>
+                  </div>
+            </a> 
+            <% } %>
+    </div>
+</body>
