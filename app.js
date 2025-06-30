@@ -95,7 +95,7 @@ app.use((req, res, next) => {
 
 
 app.get("/home", wrapAsync( async (req, res) => {
-    const idsToFind = ["685a59a7eea63bb3a0f0953f", "685a59a7eea63bb3a0f0953c", "685a59a7eea63bb3a0f09544", "685a59a7eea63bb3a0f0953a", "685a59a7eea63bb3a0f0953e"];
+    const idsToFind = ["6862bba4a9f8db6d2d032093", "6862bdaba9f8db6d2d0320a5", "6862bae8a9f8db6d2d03208d", "6862c6d1a9f8db6d2d0320eb", "6862be2aa9f8db6d2d0320ab"];
     const allListings = await Listing.find({ _id: { $in: idsToFind}});
     res.render("listings/home.ejs", {allListings});
 }));
