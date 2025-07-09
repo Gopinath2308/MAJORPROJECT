@@ -233,16 +233,20 @@ body{
 
 .Section_top{
     width: 100%;
-    height: 500px;
+    height: 550px;
     overflow: hidden;
     position:relative;
     background-image: url(images/image.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     animation: change 12s infinite ease-in-out;
+    /* margin-bottom: 800px; */
 }
 
 @keyframes change{

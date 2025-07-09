@@ -1,65 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark->Destinations</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark->Destinations</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="/css/rating.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Exile&family=Tagesschrift&family=EB+Garamond&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <style>
+    .slider {
+      height: 100vh;
+      margin-top: -50px;
+      position: relative;
+    }
+    .slider .list .item {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0;
+      z-index: 0;
+      pointer-events: none;
+      transition: 0.5s;
+      border-radius: 10px;
+    }
+    .slider .list .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .slider .list .item::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-image: linear-gradient(to top, #000 40%, transparent);
+    }
+    .slider .list .item .content {
+      position: absolute;
+      left: 10%;
+      top: 13%;
+      width: 500px;
+      max-width: 80%;
+      z-index: 1;
+      color: white;
+    }
+    .slider .list .item .content p {
+      color: #eee;
+    }
+    .slider .list .item .content h2 {
+      font-size: 50px;
+      margin: 0;
+      color: #eee;
+    }
+    .slider .list .item.active {
+      opacity: 1;
+      z-index: 10;
+      pointer-events: auto;
+    }
 
+    @keyframes showContent {
+      to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+      }
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exile&display=swap" rel="stylesheet">
+    /* Faster animation + include "See more" */
+    .slider .list .item.active p:nth-child(1),
+    .slider .list .item.active h2,
+    .slider .list .item.active p:nth-child(3),
+    .slider .list .item.active a.btn {
+      transform: translateY(30px);
+      filter: blur(20px);
+      opacity: 0;
+      animation: showContent 0.4s ease-in-out forwards;
+    }
+    .slider .list .item.active h2 { animation-delay: 0.2s; }
+    .slider .list .item.active p:nth-child(3) { animation-delay: 0.3s; }
+    .slider .list .item.active a.btn { animation-delay: 0.4s; }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    .arrows {
+      position: absolute;
+      top: 30%;
+      right: 50px;
+      z-index: 100;
+    }
+    .arrows button {
+      background-color: rgba(121, 119, 119, 0.333);
+      border: none;
+      font-family: monospace;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      font-size: x-large;
+      color: #eee;
+      transition: 0.5s;
+      margin-right: 5px;
+    }
+    .arrows button:hover {
+      background-color: #eee;
+      color: black;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    .thumbnail {
+      position: absolute;
+      bottom: 50px;
+      z-index: 11;
+      display: flex;
+      gap: 10px;
+      height: 250px;
+      padding: 0 50px;
+      box-sizing: border-box;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      white-space: nowrap;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .thumbnail::-webkit-scrollbar {
+      height: 5px;
+    }
+    .thumbnail .item {
+      width: 150px;
+      height: 220px;
+      filter: brightness(0.5);
+      transition: 0.5s;
+      flex-shrink: 0;
+      display: inline-block;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+    .thumbnail .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: ease 0.4s;
+    }
+    .thumbnail .item img:hover{
+        transform: scale(1.1);
+    }
+    .thumbnail .item.active {
+      filter: brightness(1.15);
+    }
+    .thumbnail .item .content {
+      position: absolute;
+      inset: auto 10px 10px 10px;
+      color: white;
+      font-size: 10px;
+    }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-<link href="/css/rating.css" rel="stylesheet">
+    @media screen and (max-width: 678px) {
+      .thumbnail {
+        justify-content: flex-start;
+      }
+      .slider .list .item .content h2 {
+        font-size: 60px;
+      }
+      .arrows {
+        top: 10%;
+      }
+    }
+    /* .home{
+        position: absolute;
+        top: 600px;
+        left: 100px;
+    } */
+    .Section_top p {
+        /* color: red; */
+        font-size: 30px;
+        margin-top: -150px;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        color: #7b0202;
+        text-shadow: 2px 2px 30px rgb(119, 1, 1);
+        -webkit-text-stroke: 0.5px black;
+    }
+    .Section_top h2 {
+        font-size: 50px;
+        font-family: "Exile", system-ui;
+        font-weight: 200;
+        color: #7b0202;
+        text-shadow: 2px 2px 30px rgb(119, 1, 1);
+        -webkit-text-stroke: 1.5px black;
+    }
+  </style>
 </head>
-<body>
-    <%- include("../includes/navbar.ejs") %>
-    <div class="Section_top"></div>
 
-    <div class="container">
-        <div class="pt-3 pb-3 heading"><h3>Top 10 Most Haunted Places in the World</h3></div>
-        <!-- <form method="GET" action="/listings/new">
-            <button>Create New Listing</button>
-        </form> -->
+<body style="background-image: url(https://i.pinimg.com/236x/63/57/58/6357589f98448ffab5eac96b0996cf14.jpg);">
+  <%- include("../includes/navbar.ejs") %>
+  <div class="Section_top">
+    <p>Welcome To</p>
+    <h2>Dark->Destinations</h2>
+    <form class="d-flex mt-4" role="search" style="width: 500px;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+    </form>
+  </div>
 
-        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
-            <% for(let listing of allListings) { %>
-                <a href="/home/listings/<%= listing._id %>" class="listing-link">
-                    <div class="card">
-                        <img src="<%= listing.image.url %>" class="card-img-top mb-2" style="height: 15rem;" alt="...">
-                        <div class="card-body">
-                        <p class="card-text price-color">
-                        <b><%= listing.title %></b><br>
-                            &#8377; <%= listing.price.toLocaleString("en-IN") %> for 1 night
-                        </p>
-                        </div>
-                    </div>
-                </a> 
-                <% } %>
-        </div>
+  <div class="container home">
+    <div class="pt-3 pb-3 heading mb-5">
+      <h3>Top 10 Most Haunted Places in the World</h3>
     </div>
 
-    <%- include("../includes/footer.ejs") %>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <script src="/js/script.js"></script>
+    <div class="slider mb-3">
+      <!-- Main Slider List -->
+      <div class="list">
+        <% for(let i = 0; i < allListings.length; i++) { %>
+          <a href="/home/listings/<%= allListings[i]._id %>" class="listing-link">
+            <div class="item <%= i === 0 ? 'active' : '' %>">
+              <img src="<%= allListings[i].image.url %>">
+              <div class="content">
+                <p>Destination</p>
+                <h2><%= allListings[i].title %></h2>
+                <p class="mt-2">&#8377; <%= allListings[i].price.toLocaleString("en-IN") %> for 1 night</p>
+                <a href="/home/listings/<%= allListings[i]._id %>" class="btn btn-outline-light mt-2">See more</a>
+              </div>
+            </div>
+          </a>
+        <% } %>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="thumbnail">
+        <% for(let i = 0; i < allListings.length; i++) { %>
+          <div class="item <%= i === 0 ? 'active' : '' %>">
+            <img src="<%= allListings[i].image.url %>">
+            <div class="content"><%= allListings[i].title %></div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../includes/footer.ejs") %>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+
+  <!-- Slider Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = document.querySelectorAll('.slider .list .item');
+      const next = document.getElementById('next');
+      const prev = document.getElementById('prev');
+      const thumbnails = document.querySelectorAll('.thumbnail .item');
+      const container = document.querySelector('.thumbnail');
+
+      let itemActive = 0;
+      const countItem = items.length;
+
+      function showSlider() {
+        document.querySelector('.slider .list .item.active')?.classList.remove('active');
+        document.querySelector('.thumbnail .item.active')?.classList.remove('active');
+
+        items[itemActive].classList.add('active');
+        thumbnails[itemActive].classList.add('active');
+
+        setPositionThumbnail();
+
+        clearInterval(refreshInterval);
+        refreshInterval = setInterval(() => next.click(), 3000);
+      }
+
+      function setPositionThumbnail() {
+        const activeThumbnail = thumbnails[itemActive];
+        const containerRect = container.getBoundingClientRect();
+        const activeRect = activeThumbnail.getBoundingClientRect();
+
+        if (activeRect.left < containerRect.left || activeRect.right > containerRect.right) {
+          const scrollAmount = activeThumbnail.offsetLeft - container.offsetWidth / 2 + activeThumbnail.offsetWidth / 2;
+          container.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+      }
+
+      next.onclick = () => {
+        itemActive = (itemActive + 1) % countItem;
+        showSlider();
+      };
+
+      prev.onclick = () => {
+        itemActive = (itemActive - 1 + countItem) % countItem;
+        showSlider();
+      };
+
+      thumbnails.forEach((thumbnail, index) => {
+        thumbnail.addEventListener('click', () => {
+          itemActive = index;
+          showSlider();
+        });
+      });
+
+      let refreshInterval = setInterval(() => next.click(), 3000);
+    });
+  </script>
 </body>
 </html>
