@@ -169,7 +169,7 @@
         justify-content: flex-start;
       }
       .slider .list .item .content h2 {
-        font-size: 60px;
+        font-size: 55px;
       }
       .arrows {
         top: 10%;
@@ -198,6 +198,24 @@
         text-shadow: 2px 2px 30px rgb(119, 1, 1);
         -webkit-text-stroke: 1.5px black;
     }
+    .Search {
+        width: 500px;
+      }
+
+    @media screen and (max-width: 678px){
+      .Section_top p {
+        font-size: 24px;
+        -webkit-text-stroke: 0.3px black;
+      }
+      .Section_top h2 {
+        font-size: 31px;
+        -webkit-text-stroke: 1.1px black;
+      }
+      .Search {
+        width: 250px;
+      }
+    }
+
   </style>
 </head>
 
@@ -206,8 +224,8 @@
   <div class="Section_top">
     <p>Welcome To</p>
     <h2>Dark->Destinations</h2>
-    <form class="d-flex mt-4" role="search" style="width: 500px;">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+    <form class="d-flex mt-4" role="search">
+        <input class="form-control me-2 Search" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-danger" type="submit">Search</button>
     </form>
   </div>
