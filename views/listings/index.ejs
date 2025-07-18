@@ -1,23 +1,57 @@
 <% layout("/layouts/boilerplate") %>
 <body>
-    <div class="pt-3 pb-3 heading"><h3>Haunted Places in the World</h3></div>
-    <!-- <form method="GET" action="/listings/new">
-        <button>Create New Listing</button>
-    </form> -->
+    <div class="container s-con mt-5 mb-5">
+        <form class="d-flex" role="search" onsubmit="event.preventDefault(); search();">
+        <input class="form-control me-2 Search"
+               type="search"
+               placeholder="Search by title, location or country"
+               aria-label="Search"
+               id="find"
+               onkeyup="search()" />
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+    </form>
+    </div>
+    
+
+    <div class="pt-3 pb-3 heading">
+        <h3>Haunted Places in the World</h3>
+    </div>
 
     <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
-        <% for(let listing of allListings) { %>
+        <% for (let listing of allListings) { %>
             <a href="/home/listings/<%= listing._id %>" class="listing-link">
-                <div class="card">
+                <div class="card product">
                     <img src="<%= listing.image.url %>" class="card-img-top mb-2" style="height: 15rem;" alt="...">
                     <div class="card-body">
-                      <p class="card-text price-color">
-                       <b><%= listing.title %></b><br>
-                        &#8377; <%= listing.price.toLocaleString("en-IN") %> for 1 night
-                    </p>
+                        <p class="card-text price-color">
+                            <b><%= listing.title %></b><br>
+                            &#8377; <%= listing.price.toLocaleString("en-IN") %> for 1 night<br>
+                        </p>
+                        <!-- Hidden searchable text -->
+                        <div class="searchable d-none">
+                            <%= listing.title %> 
+                            <%= listing.location %> 
+                            <%= listing.country %> 
+                        </div>
                     </div>
-                  </div>
-            </a> 
-            <% } %>
+                </div>
+            </a>
+        <% } %>
     </div>
+
+    <script type="text/javascript">
+        function search() {
+            let filter = document.getElementById('find').value.toUpperCase();
+            let cards = document.querySelectorAll('.product');
+
+            cards.forEach((card) => {
+                let searchableText = card.querySelector('.searchable').textContent.toUpperCase();
+                if (searchableText.includes(filter)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>

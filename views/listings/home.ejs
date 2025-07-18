@@ -17,6 +17,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Exile&family=Tagesschrift&family=EB+Garamond&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Diplomata&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
   <style>
     .slider {
       height: 100vh;
@@ -175,44 +178,58 @@
         top: 10%;
       }
     }
-    /* .home{
-        position: absolute;
-        top: 600px;
-        left: 100px;
-    } */
+
+    
+     .welcome {
+      padding: 50px 0 50px 50px;
+      margin-top: 40px;
+     }
     .Section_top p {
-        /* color: red; */
-        font-size: 30px;
-        margin-top: -150px;
-        font-family:Arial, Helvetica, sans-serif;
-        font-weight: 800;
-        color: #7b0202;
-        text-shadow: 2px 2px 30px rgb(119, 1, 1);
-        -webkit-text-stroke: 0.5px black;
+        font-size: 42px;
+        font-family: "Averia Libre", system-ui;
+        font-weight: 700;
     }
-    .Section_top h2 {
-        font-size: 50px;
+    .Section_top p span {
+      font-size: 55px;
+    } 
+    #web-name {
+        font-size: 33px;
         font-family: "Exile", system-ui;
         font-weight: 200;
         color: #7b0202;
         text-shadow: 2px 2px 30px rgb(119, 1, 1);
-        -webkit-text-stroke: 1.5px black;
+        -webkit-text-stroke: 1.1px black;
     }
-    .Search {
-        width: 500px;
-      }
+    .welcome-p {
+      width: 550px;
+    }
+    .welcome-p p {
+      font-size: 23px;
+      font-weight: 500;
+    }
 
     @media screen and (max-width: 678px){
+      .welcome {
+        padding: 22px 0 22px 22px;
+        margin-top: 60px;
+      }
       .Section_top p {
-        font-size: 24px;
-        -webkit-text-stroke: 0.3px black;
+        font-size: 28px;
+        /* -webkit-text-stroke: 0.3px black; */
       }
-      .Section_top h2 {
-        font-size: 31px;
-        -webkit-text-stroke: 1.1px black;
+      .Section_top p span {
+        font-size: 35px;
       }
-      .Search {
+      .welcome-p {
         width: 250px;
+      }
+      .welcome-p p {
+        font-size: 15px;
+
+      }
+      #web-name {
+        font-size: 22px;
+        -webkit-text-stroke: 0.5px black;
       }
     }
 
@@ -222,12 +239,20 @@
 <body style="background-image: url(https://i.pinimg.com/236x/63/57/58/6357589f98448ffab5eac96b0996cf14.jpg);">
   <%- include("../includes/navbar.ejs") %>
   <div class="Section_top">
-    <p>Welcome To</p>
-    <h2>Dark->Destinations</h2>
-    <form class="d-flex mt-4" role="search">
+    <div class="welcome">
+      <p><span>Start Your Journey</span><br> with <span id="web-name">Dark->Destinations</span></p>
+      <div class="welcome-p">
+        <p>Experience the thrill of the unknown as you traverse haunted landmarks filled with eerie tales and supernatural lore.<br><br>
+          Dare to explore the darkness?<br>
+          Scroll down… if you dare.
+        </p>
+      </div>
+    </div>
+
+    <!-- <form class="d-flex mt-4" role="search">
         <input class="form-control me-2 Search" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-danger" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 
   <div class="container home">
