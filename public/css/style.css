@@ -68,7 +68,14 @@ body{
     backdrop-filter: blur(10px) !important;
     border-bottom: solid 1px rgb(61, 60, 60) ;
 }
-
+@media screen and (max-width: 992px) {
+    #navbarNavAltMarkup{
+    background-color: rgba(3, 0, 0, 0.9) !important;
+    backdrop-filter: blur(60px) !important;
+    padding: 20px;
+    border-radius: 10px;
+    }
+}
 /* .nav-link:active{
     color: #d91010 !important;
 } */
