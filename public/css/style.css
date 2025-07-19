@@ -104,41 +104,108 @@ body{
     font-weight: 500;
 }
 
+/* footer Upper */
+    .footer-upper {
+        background-color: #141414;
+        color: #eee;
+        padding: 40px 20px;
+        border-top: 1px solid #444;
+        }
+    .footer-upper .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer-upper .column {
+      flex: 1;
+      min-width: 200px;
+      margin: 15px 0;
+    }
+    .footer-upper h6 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #f8f8f8;
+    }
+    .footer-upper ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-upper ul li {
+      margin-bottom: 8px;
+    }
+    .footer-upper ul li a {
+      color: #bbb;
+      text-decoration: none;
+    }
+    .footer-upper ul li a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
 
 /* footer */
-.f-info-links a{
-    text-decoration: none;
-    color: #8e8d8d;
-}
-.f-info-links a:hover {
-    text-decoration: underline;
-}
-
-.f-info-links {
-    width: 100%;
+.airbnb-footer {
+  background-color: rgba(216, 215, 215, 0.12);
+  backdrop-filter: blur(10px) !important;
+  color: #ccc;
+  font-size: 14px;
+  padding: 20px 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-top: 1px solid #282727;
 }
 
-.f-info-socials{
-    width: 100%;
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.f-info-socials i {
-    margin-right: 1rem;
-    font-size: 1.2rem;
-    color: #8e8d8d;
+.footer-left p {
+  margin: 0;
+  line-height: 1.6;
 }
 
-.f-info{
-    text-align: center;
-    height: 8rem;
-    background-color: rgba(216, 215, 215, 0.12);
-    backdrop-filter: blur(10px) !important;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.footer-center {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-center a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-center a:hover {
+  color: #ff4d4d;
+}
+
+.footer-right a {
+  margin-left: 15px;
+  font-size: 18px;
+  color: #ccc;
+  transition: transform 0.3s, color 0.3s;
+}
+.footer-right a:hover {
+  color: #ff4d4d;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
     align-items: center;
-    padding: .5rem;
-    color: #8e8d8d;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-right a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 /* cards */
