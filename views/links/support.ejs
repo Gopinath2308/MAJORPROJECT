@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Center | Dark Destinations</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600&display=swap" rel="stylesheet" />
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Exile&family=Tagesschrift&family=EB+Garamond&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Diplomata&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      /* font-family: 'Unbounded', sans-serif; */
+      /* background: linear-gradient(to right, #000000, #1a1a1a); */
+      color: #f5f5f5;
+    }
+
+    header {
+      padding: 3rem 0;
+      text-align: center;
+      background-color: #111;
+      border-bottom: 2px solid #212121;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fb0202;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    .support-section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .support-category {
+      background-color: #1f1f1f;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      border: 1px solid #333;
+      /* box-shadow: 0 0 15px rgba(240, 101, 67, 0.1); */
+      transition: all 0.3s ease;
+    }
+
+    .support-category:hover {
+      transform: translateY(-5px);
+      /* box-shadow: 0 0 25px rgba(240, 101, 67, 0.2); */
+    }
+
+    .support-category h3 {
+      color: #dc0505;
+    }
+
+    .support-category ul {
+      padding-left: 20px;
+    }
+
+    .support-category li {
+      margin-bottom: 0.6rem;
+      color: #ddd;
+    }
+
+    .support-category a {
+      color: #9f0808;
+      text-decoration: none;
+    }
+
+    .support-category a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    <%- include("../includes/navbar.ejs") %>
+  <header>
+    <h1>Support Center</h1>
+    <p>Need help? Find answers, resources, and assistance right here.</p>
+  </header>
+
+  <section class="support-section">
+    <div class="support-category">
+      <h3>Account & Settings</h3>
+      <ul>
+        <li><a href="#">How to reset your password</a></li>
+        <li><a href="#">Managing your account information</a></li>
+        <li><a href="#">Security tips</a></li>
+      </ul>
+    </div>
+
+    <div class="support-category">
+      <h3>Booking & Payments</h3>
+      <ul>
+        <li><a href="#">How to book a destination</a></li>
+        <li><a href="#">Accepted payment methods</a></li>
+        <li><a href="#">Getting refunds</a></li>
+      </ul>
+    </div>
+
+    <div class="support-category">
+      <h3>Safety & Trust</h3>
+      <ul>
+        <li><a href="#">Reporting suspicious activity</a></li>
+        <li><a href="#">Traveler safety guidelines</a></li>
+        <li><a href="#">Review moderation</a></li>
+      </ul>
+    </div>
+
+    <div class="support-category">
+      <h3>Contact Support</h3>
+      <ul>
+        <li><a href="#">Email: support@darkdestinations.com</a></li>
+        <li><a href="#">Phone: +91-9999-666-444</a></li>
+        <li><a href="#">Live chat (9AM - 8PM IST)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <%- include("../includes/footer.ejs") %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

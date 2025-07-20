@@ -1,5 +1,5 @@
 body{
-    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-family: "Averia Libre", system-ui !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -81,7 +81,7 @@ body{
 } */
 .nav-link{
     font-weight: 500;
-    font-size: 1.05rem !important;
+    font-size: 1.1rem !important;
     color: #7a7878 !important;
 }
 .fa-khanda {
@@ -103,12 +103,12 @@ body{
 
 .nav-link:hover{
     color: rgb(218, 216, 216) !important;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .nav-link.active {
     color: rgb(218, 216, 216) !important;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* footer Upper */
@@ -116,7 +116,7 @@ body{
         background-color: #141414;
         color: #eee;
         padding: 40px 20px;
-        border-top: 1px solid #444;
+        border-top: 1px solid #3a3a3a;
         }
     .footer-upper .container {
       display: flex;
@@ -141,7 +141,7 @@ body{
       margin-bottom: 8px;
     }
     .footer-upper ul li a {
-      color: #bbb;
+      color: #a3a3a3;
       text-decoration: none;
     }
     .footer-upper ul li a:hover {
@@ -154,9 +154,9 @@ body{
   background-color: rgba(216, 215, 215, 0.12);
   backdrop-filter: blur(10px) !important;
   color: #ccc;
-  font-size: 14px;
+  font-size: 15px;
   padding: 20px 0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* font-family: 'Plus Jakarta Sans', sans-serif; */
   border-top: 1px solid #282727;
 }
 

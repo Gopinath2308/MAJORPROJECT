@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Dark->Destinations</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Creepster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Exile&family=Tagesschrift&family=EB+Garamond&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Diplomata&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+    }
+    .about-header {
+      padding: 80px 20px 40px;
+      font-family: "Averia Libre", system-ui;
+      text-align: center;
+      background: linear-gradient(145deg, #1a1a1a, #000000);
+    }
+    .about-header h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 60px;
+      color: #e50914;
+      margin-bottom: 10px;
+    }
+    .about-header p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .about-content {
+      padding: 40px 20px;
+      font-family: "Averia Libre", system-ui;
+      max-width: 1000px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .about-content h2 {
+      color: #ff4e4e;
+      margin-top: 30px;
+    }
+    .about-content p {
+      font-size: 19px;
+    }
+    .team-section {
+      background-color: #111;
+      font-family: "Averia Libre", system-ui;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .team-section h2 {
+      color: #ff4e4e;
+      margin-bottom: 30px;
+    }
+    .team-member {
+      display: inline-block;
+      width: 200px;
+      margin: 15px;
+    }
+    .team-member img {
+      width: 100%;
+      border-radius: 50%;
+      border: 2px solid #444;
+    }
+    .team-member h5 {
+      margin-top: 10px;
+      color: #f8f8f8;
+    }
+    .team-member p {
+      font-size: 16px;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <%- include("../includes/navbar.ejs") %>
+  <div class="about-header">
+    <h1>About Us</h1>
+    <p>We guide you through the shadows of the world, unveiling haunted secrets and ghostly destinations for thrill-seekers and the curious alike.</p>
+  </div>
+
+  <div class="about-content">
+    <h2>Our Mission</h2>
+    <p>Dark->Destinations was born from a passion for mystery, history, and the eerie charm of places long forgotten. We aim to make your haunted travel experiences unforgettable by uncovering stories hidden beneath ruins, cemeteries, castles, and abandoned towns.</p>
+
+    <h2>Why We Do It</h2>
+    <p>We believe that history is not just found in books but in the whispers of haunted hallways and the breeze that rushes through broken windows of deserted mansions. Dark tourism isn't about fear, but fascination, remembrance, and respect for the tales of the past.</p>
+
+    <h2>What We Offer</h2>
+    <p>From curated travel guides and historical insights to community stories and real-time reviews, we ensure every explorer finds a place that calls to their dark curiosity. Whether you're a ghost hunter, a horror enthusiast, or a brave tourist — we’ve got something chilling for you.</p>
+  </div>
+
+  <div class="team-section">
+    <h2>Meet the Team</h2>
+    <div class="team-member">
+      <img src="/images/team1.jpg" alt="Founder">
+      <h5>Aryan Kapoor</h5>
+      <p>Founder & Paranormal Explorer</p>
+    </div>
+    <div class="team-member">
+      <img src="/images/team2.jpg" alt="Historian">
+      <h5>Ritika Sharma</h5>
+      <p>Lead Historian & Storyteller</p>
+    </div>
+    <div class="team-member">
+      <img src="/images/team3.jpg" alt="Guide">
+      <h5>Kunal Mehta</h5>
+      <p>Local Guide & Logistics</p>
+    </div>
+  </div>
+
+  <%- include("../includes/footer.ejs") %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

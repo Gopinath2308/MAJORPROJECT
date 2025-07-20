@@ -104,6 +104,57 @@ app.use("/home/listings", listingsRouter);
 app.use("/home/listings/:id/reviews",reviewsRouter);
 app.use("/", userRouter);
 
+app.get("/about", wrapAsync( async (req, res) => {
+    res.render("links/about.ejs");
+})
+);
+
+app.get("/privacy", wrapAsync( async (req, res) => {
+    res.render("links/privacy.ejs");
+})
+);
+
+app.get("/terms", wrapAsync( async (req, res) => {
+    res.render("links/terms.ejs");
+})
+);
+
+app.get("/cookies", wrapAsync( async (req, res) => {
+    res.render("links/cookies.ejs");
+})
+);
+
+app.get("/careers", wrapAsync( async (req, res) => {
+    res.render("links/careers.ejs");
+})
+);
+
+app.get("/press", wrapAsync( async (req, res) => {
+    res.render("links/press.ejs");
+})
+);
+
+app.get("/forum", wrapAsync( async (req, res) => {
+    res.render("links/forum.ejs");
+})
+);
+
+app.get("/story", wrapAsync( async (req, res) => {
+    res.render("links/story.ejs");
+})
+);
+
+app.get("/support", wrapAsync( async (req, res) => {
+    res.render("links/support.ejs");
+})
+);
+
+app.get("/plan", wrapAsync( async (req, res) => {
+    res.render("links/plan.ejs");
+})
+);
+
+
 
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
