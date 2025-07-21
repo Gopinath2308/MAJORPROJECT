@@ -85,7 +85,7 @@ body{
     color: #7a7878 !important;
 }
 .fa-khanda {
-    color:  #500101;
+    color:  #500101 !important;
     font-size: 2.1rem;
     margin-left: .5rem;
     margin-right: .5rem;

@@ -23,9 +23,9 @@
   
   <style>
     body {
-      margin: 0;
+      /* margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #0f0f0f;
+      background-color: #0f0f0f; */
       color: #f1f1f1;
     }
 
@@ -106,19 +106,25 @@
     .apply-btn:hover {
       background-color: #b1060f;
     }
+
+    @media screen and (max-width: 678px) {
+      header h1 span {
+        font-size: 2.5rem;
+      }
+    }
   </style>
 </head>
 <body>
     <%- include("../includes/navbar.ejs") %>
   <header>
-    <h1>Careers at &nbsp;<span> Dark->Destinations</span></h1>
+    <h1>Careers at &nbsp;<span> Dark -> Destinations</span></h1>
   </header>
 
   <section class="intro">
     <p>Are you passionate about the supernatural, storytelling, and digital experiences? Join our team and help shape the future of paranormal tourism. We’re on a mission to make the haunted unforgettable.</p>
   </section>
 
-  <section class="job-section">
+  <section class="container job-section">
     <div class="job-card">
       <h3>UI/UX Designer</h3>
       <p>We're looking for a creative mind with an eye for eerie details. Craft immersive interfaces that reflect the thrill of haunted travel.</p>

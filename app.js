@@ -154,6 +154,21 @@ app.get("/plan", wrapAsync( async (req, res) => {
 })
 );
 
+app.get("/dark", wrapAsync( async (req, res) => {
+    res.render("links/dark.ejs");
+})
+);
+
+app.get("/sitemap", wrapAsync( async (req, res) => {
+    res.render("links/sitemap.ejs");
+})
+);
+
+app.get("/contact", wrapAsync( async (req, res) => {
+    res.render("links/contact.ejs");
+})
+);
+
 
 
 app.all("*", (req, res, next) => {

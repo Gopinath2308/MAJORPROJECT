@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Tourism | Dark Destinations</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Prompt&display=swap" rel="stylesheet" />
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Exile&family=Tagesschrift&family=EB+Garamond&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Diplomata&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      /* background: linear-gradient(to bottom, #0f0f0f, #1d1d1d); */
+      color: #f4f4f4;
+      /* font-family: 'Prompt', sans-serif; */
+    }
+
+    header {
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+      background: rgba(26, 26, 26, 0.7);
+      border-bottom: 2px solid #ff3c3c;
+    }
+
+    header h1 {
+      font-family: 'Staatliches', cursive;
+      font-size: 4rem;
+      color: #ff3c3c;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .tourism-section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .tourism-section h2 {
+      font-size: 2.5rem;
+      color: #ff3c3c;
+      margin-bottom: 1rem;
+    }
+
+    .tourism-section p {
+      font-size: 1.1rem;
+      color: #dcdcdc;
+      line-height: 1.8;
+    }
+
+    .highlight-box {
+      background-color: #1f1f1f;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-left: 4px solid #ff3c3c;
+      border-radius: 8px;
+    }
+
+    .highlight-box h4 {
+      color: #ff6363;
+    }
+  </style>
+</head>
+<body>
+    <%- include("../includes/navbar.ejs") %>
+  <header>
+    <h1>Dark Tourism</h1>
+    <p>Exploring the world's most haunted, tragic, and mysterious destinations</p>
+  </header>
+
+  <section class="tourism-section">
+    <h2>What is Dark Tourism?</h2>
+    <p>
+      Dark tourism involves visiting sites historically associated with death, suffering, or the supernatural. From abandoned asylums and ghost towns to battlefields and disaster zones, these destinations offer a chilling yet educational insight into humanity's past and the power of place.
+    </p>
+
+    <div class="highlight-box">
+      <h4>Why Explore the Dark Side?</h4>
+      <p>
+        Dark tourism isn't just about thrill-seeking—it's about understanding history, honoring memory, and experiencing the eerie beauty of places long forgotten. It's about connecting with the stories that still whisper through crumbling walls and shadowed forests.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Top Dark Tourism Sites</h4>
+      <ul>
+        <li>Pripyat, Ukraine (Chernobyl Exclusion Zone)</li>
+        <li>Aokigahara Forest, Japan</li>
+        <li>Eastern State Penitentiary, USA</li>
+        <li>Jatinga, India</li>
+        <li>Poveglia Island, Italy</li>
+      </ul>
+    </div>
+  </section>
+
+  <%- include("../includes/footer.ejs") %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+
+</body>
+</html>

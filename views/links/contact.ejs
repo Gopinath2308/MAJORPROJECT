@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Dark Destinations</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=Creepster&display=swap" rel="stylesheet" />
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Exile&family=Tagesschrift&family=EB+Garamond&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Creepster&family=Diplomata&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      /* background-color: #0a0a0a; */
+      color: #f5f5f5;
+      /* font-family: 'Alata', sans-serif;
+      margin: 0; */
+    }
+
+    header {
+      background: linear-gradient(to right, #1a1a1a, #1a1919);
+      padding: 3rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid crimson;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: crimson;
+      /* font-family: 'Creepster', cursive; */
+    }
+
+    .contact-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: rgba(26, 26, 26, 0.8);
+      border-radius: 10px;
+      /* box-shadow: 0 0 25px rgba(255, 0, 0, 0.1); */
+    }
+
+    .contact-container h2 {
+      color: #ff4d4d;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p i {
+      color: #ff4d4d;
+      margin-right: 10px;
+    }
+
+    .form-control {
+      background-color: #222;
+      border: 1px solid #444;
+      color: white;
+      border-radius: 10px;
+    }
+    .btn{
+        border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+    <%- include("../includes/navbar.ejs") %>
+  <header>
+    <h1>Contact Us</h1>
+    <p>Have questions, stories, or eerie suggestions? Reach out to our team!</p>
+  </header>
+
+  <div class="contact-container">
+    <h2>Get in Touch</h2>
+    <div class="row">
+      <div class="col-md-6 contact-info">
+        <p><i class="fas fa-envelope"></i> Email: support@darkdestinations.com</p>
+        <p><i class="fas fa-phone"></i> Phone: +91 98765 43210</p>
+        <p><i class="fas fa-map-marker-alt"></i> Location: 13th Floor, Haunted Tower, Delhi, India</p>
+      </div>
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-danger">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../includes/footer.ejs") %>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
